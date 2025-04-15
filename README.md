@@ -57,7 +57,7 @@ This will start the backend server on port 3000 and the frontend development ser
 
 ## Building for Production
 
-To build the application for production:
+To build the application frontend for production or before CF push:
 
 ```bash
 npm run build
