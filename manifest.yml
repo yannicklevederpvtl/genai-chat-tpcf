@@ -1,0 +1,20 @@
+---
+applications:
+  - name: genai-chat-tpcf
+    memory: 256M
+    instances: 1
+    path: .
+    buildpacks:
+      - nodejs_buildpack
+    command: npm run start
+    env:
+      NODE_ENV: production
+    services:
+      - chatgpt
+      - gemma-ext
+    # Health monitoring
+    health-check-type: http
+    health-check-http-endpoint: /health
+    # Route configuration
+    # routes:
+    #  - route: openai-proxy-app.your-cf-domain.com

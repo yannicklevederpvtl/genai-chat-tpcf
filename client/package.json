@@ -1,0 +1,22 @@
+{
+  "name": "openai-chat-client",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "typescript": "^5.2.2",
+    "vite": "^6.2.6",
+    "vue-tsc": "^2.2.8"
+  }
+}

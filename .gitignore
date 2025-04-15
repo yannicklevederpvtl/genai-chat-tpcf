@@ -1,0 +1,47 @@
+# Development files that should not be deployed to Cloud Foundry
+.git/
+.github/
+#.gitignore
+.vscode/
+*.md
+!README.md
+
+# Node modules and dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables and local config
+.env
+.env.*
+!.env.example
+
+# Source directories that are not needed in production
+#client/src/
+client/public/
+client/node_modules/
+
+# Test directories and files
+test/
+tests/
+__tests__/
+*.test.js
+*.spec.js
+
+# Development configuration files
+*.config.dev.js
+nodemon.json
+
+# Docker files (if not using containers in CF)
+
+
+client/dist/
+
+# Documentation
+docs/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+desktop.ini
