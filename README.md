@@ -13,6 +13,7 @@ A modern chat application with OpenAI API integration, designed for deployment t
 - Response time tracking
 - Cloud Foundry deployment ready
 - Support for cloud-based GenAI services via service bindings
+- Support for multi-models plan (GenAI 10.2+)
 
 ## Technology Stack
 
@@ -40,10 +41,8 @@ OPENAI_API_KEY=your_openai_api_key
 OPENAI_BASE_URL=https://api.openai.com  # Optional, defaults to OpenAI's API URL
 ```
 
-For Cloud Foundry deployments, the application will automatically use service bindings with the following types:
-- `genai`
-- `genai-service`
-- `generative-ai`
+For Cloud Foundry deployments, the application will automatically use service bindings with `genai` type, single or multi-models
+
 
 ## Development
 
