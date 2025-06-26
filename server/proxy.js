@@ -677,6 +677,7 @@ function setupProxyRoutes(app) {
               const updatedClient = createAxiosInstance(serviceConfig.apiKey);
               
               // Update endpoint configuration
+
               const updatedBaseUrl = serviceConfig.baseUrl.replace(/\/+$/, '');
               let chatEndpoint;
               
@@ -684,8 +685,10 @@ function setupProxyRoutes(app) {
                 chatEndpoint = `${updatedBaseUrl}/chat/completions`;
               } else if (updatedBaseUrl.endsWith('/openai')) {
                 chatEndpoint = `${updatedBaseUrl}/v1/chat/completions`;
-              } else {
+              } else if (updatedBaseUrl.includes('/multi-')) {
                 chatEndpoint = `${updatedBaseUrl}/openai/v1/chat/completions`;
+              } else {
+                chatEndpoint = `${updatedBaseUrl}/chat/completions`;
               }
               
               // Use the updated configuration
@@ -738,8 +741,10 @@ function setupProxyRoutes(app) {
           chatEndpoint = baseUrl;
         } else if (baseUrl.endsWith('/openai')) {
           chatEndpoint = `${baseUrl}/v1/chat/completions`;
+        } else if (baseUrl.includes('/multi-')) {
+          chatEndpoint = `${baseUrl}/v1/chat/completions`;
         } else {
-          chatEndpoint = `${baseUrl}/openai/v1/chat/completions`;
+          chatEndpoint = `${baseUrl}/chat/completions`;
         }
         console.log('Using provider-specific chat endpoint:', chatEndpoint);
       }
